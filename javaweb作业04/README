@@ -1,0 +1,4 @@
+tomcat运行时的webServlet分别为ser01/ser02/ser03/ser04/ser05
+要求1的截图在img文件夹
+要求2和要求3都在MyServlet类中实现
+要求2通过index.html访问 要求6通过login.html访问
