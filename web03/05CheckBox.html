@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复选框</title>
+</head>
+<body>
+
+<h2>复选框</h2>
+
+<form id="checkboxForm">
+    
+    <label for="checkbox1">类型 1</label>
+    <input type="checkbox" id="checkbox1">
+
+    <label for="checkbox2">类型 2</label>
+    <input type="checkbox" id="checkbox2">
+
+    <label for="checkbox3">类型 3</label>
+    <input type="checkbox" id="checkbox3">
+
+    <br>
+    <label for="selectAll">全选</label>
+    <input type="checkbox" id="selectAll" onclick="toggleCheckboxes()">
+
+
+</form>
+
+<script>
+    function toggleCheckboxes() {
+        const selectAllCheckbox = document.getElementById('selectAll');
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+    }
+</script>
+
+</body>
+</html>

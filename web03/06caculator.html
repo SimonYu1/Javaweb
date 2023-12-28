@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <style>
+        input {
+            width: 60px;
+            height: 40px;
+            font-size: 18px;
+            margin: 5px;
+        }
+        .dis {
+            width: 280px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>简易计算器</h2>
+
+<table border="auto solid">
+    <tr>
+        <td colspan="4"><input type="text" id="display" disabled class="dis" ></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="appendToDisplay('1')"></td>
+        <td><input type="button" value="2" onclick="appendToDisplay('2')"></td>
+        <td><input type="button" value="3" onclick="appendToDisplay('3')"></td>
+        <td><input type="button" value="+" onclick="appendToDisplay('+')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="appendToDisplay('4')"></td>
+        <td><input type="button" value="5" onclick="appendToDisplay('5')"></td>
+        <td><input type="button" value="6" onclick="appendToDisplay('6')"></td>
+        <td><input type="button" value="-" onclick="appendToDisplay('-')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="appendToDisplay('7')"></td>
+        <td><input type="button" value="8" onclick="appendToDisplay('8')"></td>
+        <td><input type="button" value="9" onclick="appendToDisplay('9')"></td>
+        <td><input type="button" value="*" onclick="appendToDisplay('*')"></td>
+
+    </tr>
+    <tr>
+        <td><input type="button" value="0" onclick="appendToDisplay('0')"></td>
+        <td><input type="button" value="." onclick="appendToDisplay('.')"></td>
+        <td><input type="button" value="=" onclick="calculate()"></td>
+        <td><input type="button" value="/" onclick="appendToDisplay('/')"></td>
+  
+    </tr>
+    <tr>
+        <td><input type="button" value="x²" onclick="square()"></td>
+        <td><input type="button" value="√" onclick="sqrt()"></td>
+        <td><input type="button" value="退格" onclick="backspace()"></td>
+        <td><input type="button" value="清除" onclick="clearDisplay()"></td>
+    </tr>
+</table>
+
+<script>
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function calculate() {
+        try {
+            document.getElementById('display').value = eval(document.getElementById('display').value);
+        } catch (error) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function square() {
+        document.getElementById('display').value = Math.pow(eval(document.getElementById('display').value), 2);
+    }
+
+    function sqrt() {
+        document.getElementById('display').value = Math.sqrt(eval(document.getElementById('display').value));
+    }
+
+    function backspace() {
+        let currentValue = document.getElementById('display').value;
+        document.getElementById('display').value = currentValue.slice(0, -1);
+    }
+</script>
+
+</body>
+</html>

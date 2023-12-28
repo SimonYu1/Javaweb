@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 使用类（ES6） -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类定义</title>
+    <script>
+        class Student3 {
+            constructor(name, id, gender, age, school, major, grade) {
+                this.name = name;
+                this.id = id;
+                this.gender = gender;
+                this.age = age;
+                this.school = school;
+                this.major = major;
+                this.grade = grade;
+            }
+
+            attendClass() {
+                console.log(this.name + "正在上课");
+            }
+            doHomework() {
+                console.log(this.name + "正在写作业");
+            }
+            doExperiment() {
+                console.log(this.name + "正在做实验");
+            }
+        }
+        const student3 = new Student3("张三", "001", "男", 20, "复旦大学", "计算机科学与技术", "大三");
+        console.log(student3);
+        student3.attendClass();
+        student3.doHomework();
+        student3.doExperiment();
+    </script>
+</head>
+
+<body>
+    <h1>使用类（ES6）定义学生对象</h1>
+    <p>在控制台输出</p>
+</body>
+
+</html>

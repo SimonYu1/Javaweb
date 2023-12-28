@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 使用构造函数 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+    <script>
+        function Student1(name, id, gender, age, school, major, grade) {
+            this.name = name;
+            this.id = id;
+            this.gender = gender;
+            this.age = age;
+            this.school = school;
+            this.major = major;
+            this.grade = grade;
+
+            this.attendClass = function () {
+                console.log(this.name + "正在上课");
+            };
+            this.doHomework = function () {
+                console.log(this.name + "正在写作业");
+            };
+            this.doExperiment = function () {
+                console.log(this.name + "正在做实验");
+            };
+        }
+        var student1 = new Student1("张三", "001", "男", 18, "清华大学", "计算机科学与技术", "大一");
+        console.log(student1);
+        student1.attendClass();
+        student1.doHomework();
+        student1.doExperiment();
+    </script>
+</head>
+
+<body>
+    <h1>使用构造函数定义学生对象</h1>
+    <p>在控制台输出</p>
+</body>
+
+</html>

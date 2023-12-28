@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最多元素</title>
+</head>
+<body>
+<label for="console">在控制台输出</label>
+<script>
+    function findMostFrequentElement(arr) {
+        // 使用数组存储每个元素出现的个数
+        let frequencyMap = {};
+
+        // 计算每个元素出现的个数
+        arr.forEach(element => {
+            frequencyMap[element] = (frequencyMap[element] || 0) + 1;
+        });
+
+        // 找到出现最多的元素
+        let mostFrequentElement;
+        let maxFrequency = 0;
+
+        for (let element in frequencyMap) {
+            if (frequencyMap[element] > maxFrequency) {
+                mostFrequentElement = element;
+                maxFrequency = frequencyMap[element];
+            }
+        }
+
+        return mostFrequentElement;
+    }
+
+    // Example usage
+    const myArray = [1, 2, 2, 3, 4, 2, 5, 6, 2, 2];
+    const mostFrequent = findMostFrequentElement(myArray);
+
+    console.log(`最多的元素是: ${mostFrequent}`);
+</script>
+
+</body>
+</html>

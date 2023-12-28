@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索框</title>
+    <style>
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+        .search_button{
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+<h2>搜索框</h2>
+<form action="#" method="get">
+    <input
+        type="text"
+        id="searchBox"
+        name="searchBox"
+        value="手机"
+        onfocus="clearDefaultValue()"
+        onblur="restoreDefaultValue()"
+    >
+    <input type="submit" value="搜索" class="search_button">
+</form>
+<script>
+    function clearDefaultValue() {
+        const searchBox = document.getElementById('searchBox');
+        if (searchBox.value === '手机') {
+            searchBox.value = '';
+        }
+    }
+
+    function restoreDefaultValue() {
+        const searchBox = document.getElementById('searchBox');
+        if (searchBox.value === '') {
+            searchBox.value = '手机';
+        }
+    }
+</script>
+
+</body>
+</html>

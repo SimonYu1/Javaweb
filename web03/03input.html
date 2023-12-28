@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码框</title>
+    <style>
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>密码框</h2>
+
+<label for="password">密码:</label>
+<input type="password" id="password" name="password">
+<button onclick="togglePassword()">显示密码</button>
+
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        var showPasswordButton = document.querySelector("button");
+        // Toggle the type attribute
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            showPasswordButton.textContent = "隐藏密码";
+        } else {
+            passwordInput.type = 'password';
+            showPasswordButton.textContent = "显示密码";
+        }
+    }
+</script>
+
+</body>
+</html>
